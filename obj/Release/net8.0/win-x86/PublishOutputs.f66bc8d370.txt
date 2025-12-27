@@ -1,5 +1,7 @@
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/BarberDario.Api.exe
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win/web.config
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/publish_win/web.config
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/web.config
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/appsettings.Development.json
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/appsettings.json
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/appsettings.Production.json
@@ -8,6 +10,16 @@
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win/appsettings.Production.json
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win/BarberDario.Api.deps.json
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win/BarberDario.Api.runtimeconfig.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/appsettings.Development.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/appsettings.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/appsettings.Production.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/BarberDario.Api.deps.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/BarberDario.Api.runtimeconfig.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/publish_win/appsettings.Development.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/publish_win/appsettings.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/publish_win/appsettings.Production.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/publish_win/BarberDario.Api.deps.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/publish_win_x86/publish_win/BarberDario.Api.runtimeconfig.json
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/BarberDario.Api.dll
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/BarberDario.Api.runtimeconfig.json
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/publish_win_x86/BarberDario.Api.pdb

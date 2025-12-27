@@ -3,8 +3,8 @@ using System;
 using BarberDario.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -18,31 +18,31 @@ namespace BarberDario.Api.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.11")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("BarberDario.Api.Data.Entities.BlockedTimeSlot", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateOnly>("BlockDate")
                         .HasColumnType("date");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<TimeOnly>("EndTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time");
 
                     b.Property<string>("Reason")
                         .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<TimeOnly>("StartTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time");
 
                     b.HasKey("Id");
 
@@ -55,51 +55,51 @@ namespace BarberDario.Api.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AdminNotes")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateOnly>("BookingDate")
                         .HasColumnType("date");
 
                     b.Property<string>("CancellationReason")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CancelledAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("ConfirmationSentAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("CustomerId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CustomerNotes")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<TimeOnly>("EndTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time");
 
                     b.Property<DateTime?>("ReminderSentAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("ServiceId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<TimeOnly>("StartTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -120,25 +120,25 @@ namespace BarberDario.Api.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<TimeOnly?>("BreakEndTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time");
 
                     b.Property<TimeOnly?>("BreakStartTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time");
 
                     b.Property<TimeOnly>("CloseTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time");
 
                     b.Property<int>("DayOfWeek")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsOpen")
-                        .HasColumnType("boolean");
+                        .HasColumnType("bit");
 
                     b.Property<TimeOnly>("OpenTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time");
 
                     b.HasKey("Id");
 
@@ -150,7 +150,7 @@ namespace BarberDario.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("02783d14-b505-4380-ada6-42e28cb1719e"),
+                            Id = new Guid("dbe7723d-35cc-485f-9e6e-04e3a0639f94"),
                             CloseTime = new TimeOnly(0, 0, 0),
                             DayOfWeek = 0,
                             IsOpen = false,
@@ -158,7 +158,7 @@ namespace BarberDario.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a4cf0422-a981-4763-a779-9bd8bba6dbfc"),
+                            Id = new Guid("e0b75c2e-3d58-4f0c-82bd-24db70b471bd"),
                             CloseTime = new TimeOnly(18, 0, 0),
                             DayOfWeek = 1,
                             IsOpen = true,
@@ -166,7 +166,7 @@ namespace BarberDario.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f3023f62-21b1-48e2-bfcf-cf6a70f211cc"),
+                            Id = new Guid("56e2422b-b8ca-4d0f-9afc-b4ea46140673"),
                             CloseTime = new TimeOnly(18, 0, 0),
                             DayOfWeek = 2,
                             IsOpen = true,
@@ -174,7 +174,7 @@ namespace BarberDario.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1c9975f3-edff-4a76-ab99-9a93b99a31c2"),
+                            Id = new Guid("ef78c874-bdc8-44f3-bb38-d5566581d2c9"),
                             CloseTime = new TimeOnly(18, 0, 0),
                             DayOfWeek = 3,
                             IsOpen = true,
@@ -182,7 +182,7 @@ namespace BarberDario.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("67448c16-2157-4153-a41b-2ccb73cb4a4f"),
+                            Id = new Guid("13a514e0-4b48-439f-b2f4-7c83bf06c40d"),
                             CloseTime = new TimeOnly(20, 0, 0),
                             DayOfWeek = 4,
                             IsOpen = true,
@@ -190,7 +190,7 @@ namespace BarberDario.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("703275df-27e2-41a5-8d45-8f4c3216228e"),
+                            Id = new Guid("fa184a8e-ed14-4edc-91bc-7455c0c9a29f"),
                             CloseTime = new TimeOnly(18, 0, 0),
                             DayOfWeek = 5,
                             IsOpen = true,
@@ -198,7 +198,7 @@ namespace BarberDario.Api.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5abe3aca-36b6-4c79-9945-bfb4c4864536"),
+                            Id = new Guid("e54cf1ea-6cef-40a5-9da1-82f5509b61db"),
                             CloseTime = new TimeOnly(16, 0, 0),
                             DayOfWeek = 6,
                             IsOpen = true,
@@ -210,45 +210,45 @@ namespace BarberDario.Api.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime?>("LastVisit")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("NoShowCount")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Notes")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("TotalBookings")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -264,39 +264,39 @@ namespace BarberDario.Api.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("BookingId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("EmailType")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ErrorMessage")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RecipientEmail")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<DateTime?>("SentAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Subject")
                         .IsRequired()
                         .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
+                        .HasColumnType("nvarchar(500)");
 
                     b.HasKey("Id");
 
@@ -311,34 +311,34 @@ namespace BarberDario.Api.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("DisplayOrder")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("DurationMinutes")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("boolean");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<decimal>("Price")
                         .HasPrecision(10, 2)
-                        .HasColumnType("numeric(10,2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -350,50 +350,50 @@ namespace BarberDario.Api.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            CreatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3490),
+                            CreatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8130),
                             Description = "Klassischer Herrenhaarschnitt mit Styling",
                             DisplayOrder = 1,
                             DurationMinutes = 30,
                             IsActive = true,
                             Name = "Herrenschnitt",
                             Price = 35.00m,
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3490)
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8130)
                         },
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-222222222222"),
-                            CreatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3520),
+                            CreatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8150),
                             Description = "Professionelles Bart-Trimming und Konturenschneiden",
                             DisplayOrder = 2,
                             DurationMinutes = 20,
                             IsActive = true,
                             Name = "Bart Trimmen",
                             Price = 20.00m,
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3520)
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8150)
                         },
                         new
                         {
                             Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            CreatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3520),
+                            CreatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8160),
                             Description = "Haarschnitt + Bart Trimmen",
                             DisplayOrder = 3,
                             DurationMinutes = 50,
                             IsActive = true,
                             Name = "Komplettpaket",
                             Price = 50.00m,
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3520)
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8160)
                         },
                         new
                         {
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
-                            CreatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3530),
+                            CreatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8160),
                             Description = "Haarschnitt für Kinder bis 12 Jahre",
                             DisplayOrder = 4,
                             DurationMinutes = 30,
                             IsActive = true,
                             Name = "Kinder Haarschnitt",
                             Price = 25.00m,
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3530)
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8160)
                         });
                 });
 
@@ -401,18 +401,18 @@ namespace BarberDario.Api.Migrations
                 {
                     b.Property<string>("Key")
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Description")
                         .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Value")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Key");
 
@@ -423,56 +423,56 @@ namespace BarberDario.Api.Migrations
                         {
                             Key = "BOOKING_INTERVAL_MINUTES",
                             Description = "Zeitintervall für Buchungen in Minuten",
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3710),
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8320),
                             Value = "15"
                         },
                         new
                         {
                             Key = "MAX_ADVANCE_BOOKING_DAYS",
                             Description = "Wie viele Tage im Voraus kann gebucht werden",
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3710),
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8320),
                             Value = "60"
                         },
                         new
                         {
                             Key = "MIN_ADVANCE_BOOKING_HOURS",
                             Description = "Mindestvorlauf für Buchungen in Stunden",
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3720),
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8320),
                             Value = "24"
                         },
                         new
                         {
                             Key = "REMINDER_HOURS_BEFORE",
                             Description = "Wann vor dem Termin wird die Erinnerung gesendet (Stunden)",
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3720),
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8320),
                             Value = "24"
                         },
                         new
                         {
                             Key = "ADMIN_EMAIL",
                             Description = "Admin Email-Adresse",
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3720),
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8320),
                             Value = "dario@barberdario.com"
                         },
                         new
                         {
                             Key = "BUSINESS_NAME",
                             Description = "Name des Geschäfts",
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3720),
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8320),
                             Value = "Barber Dario"
                         },
                         new
                         {
                             Key = "BUSINESS_ADDRESS",
                             Description = "Geschäftsadresse",
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3720),
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8320),
                             Value = "Berliner Allee 43, 40212 Düsseldorf"
                         },
                         new
                         {
                             Key = "TIMEZONE",
                             Description = "Zeitzone des Geschäfts",
-                            UpdatedAt = new DateTime(2025, 12, 27, 15, 30, 41, 907, DateTimeKind.Utc).AddTicks(3720),
+                            UpdatedAt = new DateTime(2025, 12, 27, 20, 27, 53, 687, DateTimeKind.Utc).AddTicks(8320),
                             Value = "Europe/Berlin"
                         });
                 });

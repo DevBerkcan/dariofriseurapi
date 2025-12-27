@@ -1,7 +1,7 @@
 using BarberDario.Api.Data;
 using BarberDario.Api.Options;
 using Hangfire;
-using Hangfire.PostgreSql;
+using Hangfire.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,7 +22,7 @@ builder.Services.AddSwaggerGen(options =>
 
 // Add Database Context
 builder.Services.AddDbContext<BarberDarioDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add Options
 builder.Services.Configure<EmailOptions>(builder.Configuration.GetSection("Email"));
@@ -34,15 +34,15 @@ builder.Services.AddScoped<BarberDario.Api.Services.EmailService>();
 builder.Services.AddScoped<BarberDario.Api.Services.AdminService>();
 builder.Services.AddScoped<BarberDario.Api.Services.ReminderService>();
 
-// Add Hangfire
-builder.Services.AddHangfire(configuration => configuration
-    .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
-    .UseSimpleAssemblyNameTypeSerializer()
-    .UseRecommendedSerializerSettings()
-    .UsePostgreSqlStorage(c => c.UseNpgsqlConnection(
-        builder.Configuration.GetConnectionString("DefaultConnection"))));
+// Add Hangfire - TEMPORARILY DISABLED FOR DEPLOYMENT
+// TODO: Re-enable after SQL Server database is created and connection string is updated
+// builder.Services.AddHangfire(configuration => configuration
+//     .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
+//     .UseSimpleAssemblyNameTypeSerializer()
+//     .UseRecommendedSerializerSettings()
+//     .UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddHangfireServer();
+// builder.Services.AddHangfireServer();
 
 // Add CORS
 var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? [];
@@ -72,10 +72,11 @@ app.UseCors();
 app.UseAuthorization();
 
 // Hangfire Dashboard (only in development for security)
-if (app.Environment.IsDevelopment())
-{
-    app.UseHangfireDashboard("/hangfire");
-}
+// TEMPORARILY DISABLED
+// if (app.Environment.IsDevelopment())
+// {
+//     app.UseHangfireDashboard("/hangfire");
+// }
 
 app.MapControllers();
 
@@ -88,15 +89,16 @@ if (app.Environment.IsDevelopment())
 }
 
 // ✅ Schedule recurring jobs (DI-based, safe for IIS / Startup)
-using (var scope = app.Services.CreateScope())
-{
-    var recurringJobs = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
-
-    recurringJobs.AddOrUpdate<BarberDario.Api.Services.ReminderService>(
-        "send-daily-reminders",
-        service => service.SendDailyRemindersAsync(),
-        Cron.Daily(9)
-    );
-}
+// TEMPORARILY DISABLED - Re-enable after Hangfire is working
+// using (var scope = app.Services.CreateScope())
+// {
+//     var recurringJobs = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
+//
+//     recurringJobs.AddOrUpdate<BarberDario.Api.Services.ReminderService>(
+//         "send-daily-reminders",
+//         service => service.SendDailyRemindersAsync(),
+//         Cron.Daily(9)
+//     );
+// }
 
 app.Run();
