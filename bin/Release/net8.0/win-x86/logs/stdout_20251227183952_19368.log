@@ -1,0 +1,8 @@
+Unhandled exception. System.InvalidOperationException: Current JobStorage instance has not been initialized yet. You must set it before using Hangfire Client or Server API. For .NET Core applications please call the `IServiceCollection.AddHangfire` extension method from Hangfire.NetCore or Hangfire.AspNetCore package depending on your application type when configuring the services and ensure service-based APIs are used instead of static ones, like `IBackgroundJobClient` instead of `BackgroundJob` and `IRecurringJobManager` instead of `RecurringJob`.
+   at Hangfire.JobStorage.get_Current() in C:\projects\hangfire-525\src\Hangfire.Core\JobStorage.cs:line 42
+   at Hangfire.RecurringJobManager..ctor() in C:\projects\hangfire-525\src\Hangfire.Core\RecurringJobManager.cs:line 42
+   at Hangfire.RecurringJob.<>c.<.cctor>b__66_0() in C:\projects\hangfire-525\src\Hangfire.Core\RecurringJob.cs:line 28
+   at Hangfire.RecurringJob.AddOrUpdate[T](String recurringJobId, Expression`1 methodCall, String cronExpression, RecurringJobOptions options) in C:\projects\hangfire-525\src\Hangfire.Core\RecurringJob.cs:line 618
+   at Hangfire.RecurringJob.AddOrUpdate[T](String recurringJobId, Expression`1 methodCall, String cronExpression) in C:\projects\hangfire-525\src\Hangfire.Core\RecurringJob.cs:line 608
+   at Program.<Main>$(String[] args) in /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/Program.cs:line 90
+   at Program.<Main>(String[] args)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2EtqSrR/O80=",
+  "dgSpecHash": "qHrHp5+ouoM=",
   "success": true,
   "projectFilePath": "/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/BarberDario.Api.csproj",
   "expectedPackageFiles": [
@@ -65,7 +65,10 @@
     "/Users/berkcan/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/berkcan/.nuget/packages/system.security.cryptography.pkcs/8.0.1/system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
     "/Users/berkcan/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
-    "/Users/berkcan/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512"
+    "/Users/berkcan/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512",
+    "/Users/berkcan/.nuget/packages/microsoft.netcore.app.runtime.win-x86/8.0.5/microsoft.netcore.app.runtime.win-x86.8.0.5.nupkg.sha512",
+    "/Users/berkcan/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x86/8.0.5/microsoft.aspnetcore.app.runtime.win-x86.8.0.5.nupkg.sha512",
+    "/Users/berkcan/.nuget/packages/microsoft.netcore.app.host.win-x86/8.0.5/microsoft.netcore.app.host.win-x86.8.0.5.nupkg.sha512"
   ],
   "logs": []
 }

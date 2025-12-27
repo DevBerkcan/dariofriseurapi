@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BarberDario.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d874fa120f770b68d36952f5f1babd29399bfe56")]
 [assembly: System.Reflection.AssemblyProductAttribute("BarberDario.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BarberDario.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

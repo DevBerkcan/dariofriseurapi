@@ -139,14 +139,4 @@
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/obj/Release/net8.0/BarberDario.Api.pdb
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/obj/Release/net8.0/BarberDario.Api.genruntimeconfig.cache
 /Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/obj/Release/net8.0/ref/BarberDario.Api.dll
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/web.config
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/appsettings.Development.json
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/appsettings.json
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/appsettings.Production.json
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/BarberDario.Api.deps.json
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/BarberDario.Api.runtimeconfig.json
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/publish/web.config
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/publish/appsettings.Development.json
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/publish/appsettings.json
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/publish/BarberDario.Api.deps.json
-/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/bin/Release/net8.0/publish/publish/BarberDario.Api.runtimeconfig.json
+/Users/berkcan/Dropbox/Mac (2)/Documents/Dario_Friseur Homepage/barberdario-api/BarberDario.Api/obj/Release/net8.0/BarberDario.Api.sourcelink.json

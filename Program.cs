@@ -1,8 +1,9 @@
 using BarberDario.Api.Data;
 using BarberDario.Api.Options;
-using Microsoft.EntityFrameworkCore;
 using Hangfire;
 using Hangfire.PostgreSql;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -86,10 +87,16 @@ if (app.Environment.IsDevelopment())
     await db.Database.MigrateAsync();
 }
 
-// Schedule recurring jobs
-RecurringJob.AddOrUpdate<BarberDario.Api.Services.ReminderService>(
-    "send-daily-reminders",
-    service => service.SendDailyRemindersAsync(),
-    Cron.Daily(9)); // Runs daily at 9:00 AM
+// ✅ Schedule recurring jobs (DI-based, safe for IIS / Startup)
+using (var scope = app.Services.CreateScope())
+{
+    var recurringJobs = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
+
+    recurringJobs.AddOrUpdate<BarberDario.Api.Services.ReminderService>(
+        "send-daily-reminders",
+        service => service.SendDailyRemindersAsync(),
+        Cron.Daily(9)
+    );
+}
 
 app.Run();
